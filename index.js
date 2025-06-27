@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-const cors = require("cors");
+
 
 app.use(cors({
   origin: "https://fittrack-frontend-mauve.vercel.app/", // your frontend domain
