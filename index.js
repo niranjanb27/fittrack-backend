@@ -10,7 +10,7 @@ const PORT = 5000;
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://fittrack.vercel.app", // your frontend domain
+  origin: "https://fittrack-frontend-mauve.vercel.app/", // your frontend domain
 }));
 
 app.use(bodyParser.json());
