@@ -7,9 +7,7 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-app.use(cors({
-  origin: "https://your-frontend-domain.com", // allow only your deployed frontend
-}));
+app.use(cors());
 app.use(bodyParser.json());
 
 // ✅ BMI Calculation
@@ -40,8 +38,8 @@ Create a personalized fitness plan for a person with the following details:
 - Goal: ${goal}
 
 Include two sections:
-1.  Diet Plan (simple and balanced)
-2.  Exercise Plan (easy and suitable for beginners)
+1. Diet Plan (simple and balanced)
+2. Exercise Plan (easy and suitable for beginners)
 
 Use bullet points. Keep it practical.
 `;
