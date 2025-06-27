@@ -55,7 +55,7 @@ Use bullet points. Keep it practical.
       body: JSON.stringify({
         model: "command",
         prompt: prompt,
-        max_tokens: 1200,
+        max_tokens: 900,
         temperature: 0.7,
       }),
     });
