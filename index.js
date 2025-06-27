@@ -7,12 +7,9 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-
-
 app.use(cors({
-  origin: "https://fittrack-frontend-mauve.vercel.app/", // your frontend domain
+  origin: "https://your-frontend-domain.com", // allow only your deployed frontend
 }));
-
 app.use(bodyParser.json());
 
 // ✅ BMI Calculation
