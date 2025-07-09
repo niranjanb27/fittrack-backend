@@ -7,8 +7,15 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// ✅ Proper CORS configuration
+app.use(
+  cors({
+    origin: "*", // Or use ['http://localhost:5173'] to restrict to specific domain
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
-app.use(cors());
 app.use(bodyParser.json());
 
 // ✅ BMI Calculation
@@ -24,7 +31,7 @@ app.post("/api/bmi", (req, res) => {
 
 // ✅ AI Plan using Cohere
 app.post("/api/plan", async (req, res) => {
-  const { bmi, age, gender, goal } = req.body;
+  const { bmi, age, gender, goal, food } = req.body;
   const COHERE_API_KEY = process.env.COHERE_API_KEY;
 
   if (!COHERE_API_KEY) {
@@ -37,6 +44,7 @@ Create a personalized fitness plan for a person with the following details:
 - Gender: ${gender}
 - BMI: ${bmi}
 - Goal: ${goal}
+${food ? `- Food Type: ${food}` : ""}
 
 Include two sections:
 1. Diet Plan (simple and balanced)
