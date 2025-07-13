@@ -47,10 +47,10 @@ Create a personalized fitness plan for a person with the following details:
 ${food ? `- Food Type: ${food}` : ""}
 
 Include two sections:
-1. Diet Plan (simple and balanced)
-2. Exercise Plan (easy and suitable for beginners)
+1. *Diet* (Monday to Saturday)
+2. *Exercise* (Monday to Saturday)
 
-Use bullet points. Keep it practical.
+Use 5 bullet points only. Bold the Tip(if any) Keep it practical.
 `;
 
   try {
